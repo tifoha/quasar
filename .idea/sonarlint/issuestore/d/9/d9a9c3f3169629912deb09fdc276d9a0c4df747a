@@ -1,0 +1,9 @@
+
+hsquid:UselessImportCheck":Remove this unused import 'java.util.concurrent.Callable'.(¾×¶îûÿÿÿÿ8åÈÄ¨ë+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(Œ˜¤Åıÿÿÿÿ8Õá½¨ë+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(…üÇ¸8Õá½¨ë+
+Vsquid:UselessImportCheck"-Remove this unused import 'java.time.Period'.(šÉ¢½8Õá½¨ë+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(½¦ÿÿÿÿÿ8Õá½¨ë+
