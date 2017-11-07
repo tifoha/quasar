@@ -1,9 +1,14 @@
 
-hsquid:UselessImportCheck":Remove this unused import 'java.util.concurrent.Callable'.(¾×¶îûÿÿÿÿ8åÈÄ¨ë+
 Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(Œ˜¤Åıÿÿÿÿ8Õá½¨ë+
+squid:S106"9Replace this use of System.out or System.err by a logger.(½¦ÿÿÿÿÿ8§¹êÏë+
 T
-squid:S106"9Replace this use of System.out or System.err by a logger.(…üÇ¸8Õá½¨ë+
-Vsquid:UselessImportCheck"-Remove this unused import 'java.time.Period'.(šÉ¢½8Õá½¨ë+
+squid:S106"9Replace this use of System.out or System.err by a logger.(ı­æ»8§¹êÏë+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¥úÂÿÿÿÿÿ8§¹êÏë+
 Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(½¦ÿÿÿÿÿ8Õá½¨ë+
+squid:S106"9Replace this use of System.out or System.err by a logger.(Œ˜¤Åıÿÿÿÿ8§¹êÏë+
+²%squid:RedundantThrowsDeclarationCheck"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(àÜÕúÿÿÿÿÿ8§¹êÏë+
+¼%squid:RedundantThrowsDeclarationCheck"€Remove the declaration of thrown exception 'java.util.concurrent.ExecutionException', as it cannot be thrown from method's body.(àÜÕúÿÿÿÿÿ8§¹êÏë+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(£¿¸¢ûÿÿÿÿ8§¹êÏë+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(…üÇ¸8§¹êÏë+
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÕÕİıÿÿÿÿ8§¹êÏë+
