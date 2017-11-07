@@ -12,6 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * Created by Vitaliy Sereda on 03.11.17.
@@ -70,59 +71,23 @@ public class Utils {
 		bbuf.put(requestString.getBytes(StandardCharsets.UTF_8));
 		bbuf.rewind();
 		final CharBuffer cbuf = StandardCharsets.UTF_8.decode(bbuf);
-		final char SPACE = ' ';
+
 		String method = readTo(cbuf, " ");
 		String requestUri = readTo(cbuf, " ");
 		String httpVersion = readTo(cbuf, "\n\r");
 
-////		readTo(cbuf, " ");
-//
-//		for (int i = 0; i < Math.min(7, cbuf.limit()); i++) {
-//			if (cbuf.get(i) == SPACE) {
-//				method = cbuf.subSequence(0, i).toString();
-//				cbuf.position(++i);
-//				break;
-//			}
-//		}
-//		for (int count = 0, i = cbuf.position(); i < cbuf.limit(); i++, count++) {
-//			if (cbuf.get(i) == SPACE) {
-//				requestUri = cbuf.subSequence(0, count).toString();
-//				cbuf.position(++i);
-//				break;
-//			}
-//		}
-//		for (int count = 0, i = cbuf.position(); i < cbuf.limit(); i++, count++) {
-//			if (cbuf.get(i) == '\n' && cbuf.get(i + 1) == '\r') {
-//				httpVersion = cbuf.subSequence(0, count).toString();
-//				cbuf.position(i + 2);
-//				break;
-//			}
-//		}
-		List<String> strings = new LinkedList<>();
-		String s = "";
-		while (true).isEmpty()) {
-			!(s = readTo(cbuf, "\n\r"));
-			strings.add(s);
-		}
 		Map<String, String> headers = new LinkedHashMap<>();
-
-//		for (int count = 0, i = cbuf.position(); i < cbuf.limit(); i++, count++) {
-//			if (cbuf.get(i) == ':' && cbuf.get(i + 1) == SPACE) {
-//				httpVersion = cbuf.subSequence(0, count).toString();
-//				cbuf.position(i + 2);
-//				break;
-//			}
-//			if (cbuf.get(i) == '\n' && cbuf.get(i + 1) == '\r') {
-//				httpVersion = cbuf.subSequence(0, count).toString();
-//				cbuf.position(i + 2);
-//				break;
-//			}
-//		}
+		String s = "";
+		Pattern pattern = Pattern.compile(":\\s*");
+		while (!(s = readTo(cbuf, "\n\r")).isEmpty()) {
+			String[] data = pattern.split(s, 2);
+			headers.put(data[0], data[1]);
+		}
 
 		System.out.println(method);
 		System.out.println(requestUri);
 		System.out.println(httpVersion);
-		System.out.println(strings);
+		System.out.println(headers);
 	}
 
 	private static String readTo(CharBuffer cbuf, String stopString) {
